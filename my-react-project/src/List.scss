@@ -1,0 +1,365 @@
+body {
+    background-color: rgb(17, 20, 25);
+}
+
+.header {
+    width: 100%;
+    height: 56px;
+    background-color: rgb(25, 27, 33);
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    .header__content {
+        width: 147px;
+        height: 35px;
+        margin-left: 40px;
+        display: flex;
+        justify-content: space-between;
+
+        &-logo {
+            width: 35px;
+            height: 35px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &-title {
+            color: white;
+            display: flex;
+            font-size: 18px;
+            align-items: center;
+        }
+    }
+
+    &__button {
+        .button-two {
+            border-radius: 4px;
+            background-color: rgb(60, 140, 248);
+            border: none;
+            padding: 20px;
+            width: 120px;
+            height: 36px;
+            transition: all 0.5s;
+            box-sizing: border-box;
+            margin-right: 40px;
+
+            span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+                text-align: center;
+                color: white;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+
+                &:after {
+                    content: '»';
+                    position: absolute;
+                    opacity: 0;
+                    top: 0;
+                    right: -20px;
+                    transition: 0.5s;
+                }
+            }
+
+            &:hover span {
+                padding-right: 20px;
+            }
+
+            &:hover span:after {
+                opacity: 1;
+                right: 0;
+            }
+
+
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            transition: opacity 500ms;
+            visibility: hidden;
+            opacity: 0;
+            color: white;
+
+            &:target {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .popup {
+                margin: 70px auto;
+                padding: 20px;
+                background: rgb(25, 27, 33);
+                border-radius: 5px;
+                width: 40%;
+                height: auto;
+                position: relative;
+                transition: all 2s ease-in-out;
+
+                .close {
+                    position: absolute;
+                    top: 20px;
+                    right: 30px;
+                    transition: all 200ms;
+                    font-size: 30px;
+                    font-weight: bold;
+                    text-decoration: none;
+                    color: #333;
+                }
+
+                .content {
+                    max-height: 30%;
+                    overflow: auto;
+
+                    .popup__input {
+                        margin-bottom: 20px;
+
+                        input {
+                            width: 532px;
+                            height: 34px;
+                            border-radius: 4px;
+                            box-sizing: border-box;
+                        }
+                    }
+
+                    .popup-button {
+                        display: flex;
+
+                        // justify-content: flex-end;
+                        button {
+                            width: 91px;
+                            height: 36px;
+                            background-color: rgb(52, 152, 255);
+                            box-sizing: border-box;
+                            border-radius: 6px;
+                            color: white;
+                        }
+
+                        .popup-cancel {
+                            margin-left: 10px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            a {
+                                text-decoration: none;
+                                color: white;
+                            }
+                        }
+                    }
+
+
+                }
+            }
+        }
+    }
+}
+
+.body-content {
+
+    width: 90%;
+    height: auto;
+    margin: 0px auto;
+    margin-top: 10px;
+
+    &_base {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        color: white;
+        gap: 26px;
+
+
+        .information {
+            width: 23%;
+            height: auto;
+            background-color: rgb(25, 27, 33);
+            box-sizing: border-box;
+            border-radius: 6px;
+
+
+            .information-base {
+                width: 90%;
+                margin: 0px auto;
+            }
+
+            .information__header {
+                display: flex;
+                gap: 20px;
+                font-weight: bold;
+                text-transform: uppercase;
+
+                &-logo {
+                    width: 60px;
+                    height: 60px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            .information__body {
+                &-content {
+                    display: flex;
+
+                    .thumb-logo {
+                        width: 20px;
+                        height: 20px;
+                        margin-top: 20px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .if-text {
+                        margin-left: 10px;
+                        width: auto;
+
+                    }
+                }
+            }
+
+            .information__footer {
+                margin-bottom: 15px;
+                display: flex;
+                justify-content: flex-end;
+                gap: 10px;
+                margin-top: 25px;
+                .overlay {
+                    position: fixed;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: rgba(0, 0, 0, 0.7);
+                    transition: opacity 500ms;
+                    visibility: hidden;
+                    opacity: 0;
+                    color: white;
+        
+                    &:target {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+        
+                    .popup {
+                        margin: 70px auto;
+                        padding: 20px;
+                        background: rgb(25, 27, 33);
+                        border-radius: 5px;
+                        width: 40%;
+                        height: auto;
+                        position: relative;
+                        transition: all 2s ease-in-out;
+        
+                        .close {
+                            position: absolute;
+                            top: 20px;
+                            right: 30px;
+                            transition: all 200ms;
+                            font-size: 30px;
+                            font-weight: bold;
+                            text-decoration: none;
+                            color: #333;
+                        }
+        
+                        .content {
+                            max-height: 30%;
+                            overflow: auto;
+        
+                            .popup__input {
+                                margin-bottom: 20px;
+        
+                                input {
+                                    width: 532px;
+                                    height: 34px;
+                                    border-radius: 4px;
+                                    box-sizing: border-box;
+                                }
+                            }
+        
+                            .popup-button {
+                                display: flex;
+        
+                                // justify-content: flex-end;
+                                button {
+                                    width: 91px;
+                                    height: 36px;
+                                    background-color: rgb(52, 152, 255);
+                                    box-sizing: border-box;
+                                    border-radius: 6px;
+                                    color: white;
+                                }
+        
+                                .popup-cancel {
+                                    margin-left: 10px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+        
+                                    a {
+                                        text-decoration: none;
+                                        color: white;
+                                    }
+                                }
+                            }
+        
+        
+                        }
+                    }
+                }
+                &-edit {
+
+                    button {
+                        width: 73px;
+                        height: 36px;
+                        background-color: rgb(79, 158, 108);
+                        box-sizing: border-box;
+                        border-radius: 6px;
+
+
+                        span {
+                            a {
+                                text-decoration: none;
+                                color: white;
+                            }
+                        }
+                    }
+
+
+
+                }
+
+                &-delete {
+                    button {
+                        box-sizing: border-box;
+                        background-color: rgb(213, 72, 87);
+                        width: 90px;
+                        height: 36px;
+                        border-radius: 6px;
+                        color: white;
+                    }
+                }
+            }
+        }
+
+    }
+}
